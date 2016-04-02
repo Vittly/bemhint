@@ -16,11 +16,11 @@ describe('PluginsRunner', function() {
         });
 
         it('should init entities', function() {
-            var entities = PluginsRunner.initEntities([[{tech: 'some.tech'}]]);
+            var entities = PluginsRunner.initEntities([[{name: 'some.tech'}]]);
 
             entities.should.have.length(1);
             entities[0].should.be.instanceOf(Entity);
-            Entity.prototype.__constructor.should.be.calledWith([{tech: 'some.tech'}]);
+            Entity.prototype.__constructor.should.be.calledWith(undefined, [{name: 'some.tech'}]);
         });
     });
 

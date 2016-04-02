@@ -19,7 +19,7 @@ describe('Plugin.prototype', function() {
         ///
         function createEntities_(entities) {
             return entities.map(function(techs) {
-                return new Entity(techs.map(function(item) {
+                return new Entity({}, techs.map(function(item) {
                     return typeof item === 'string' ? {name: item} : item;
                 }));
             });

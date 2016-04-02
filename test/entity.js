@@ -6,7 +6,7 @@ describe('Entity.prototype', function() {
 
     describe('.getTechs', function() {
         it('should get all techs', function() {
-            entity = new Entity([{tech: 'first.tech'}, {tech: 'second.tech'}]);
+            entity = new Entity({}, [{tech: 'first.tech'}, {tech: 'second.tech'}]);
 
             entity.getTechs().should.be.eql([{tech: 'first.tech'}, {tech: 'second.tech'}]);
         });
@@ -14,7 +14,7 @@ describe('Entity.prototype', function() {
 
     describe('.getTechByName', function() {
         it('should get a tech by name', function() {
-            entity = new Entity([{name: 'first.tech'}, {name: 'second.tech'}]);
+            entity = new Entity({}, [{name: 'first.tech'}, {name: 'second.tech'}]);
 
             entity.getTechByName('first.tech').should.be.eql({name: 'first.tech'});
         });
@@ -118,7 +118,7 @@ describe('Entity.prototype', function() {
 
     describe('.getErrors', function() {
         it('should get errors', function() {
-            entity = new Entity([{path: 'some/path', name: 'some.tech'}]);
+            entity = new Entity({}, [{path: 'some/path', name: 'some.tech'}]);
 
             entity.addError({msg: 'some-msg', tech: 'some.tech', value: 'some-value'});
 
